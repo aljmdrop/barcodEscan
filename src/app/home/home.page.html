@@ -1,12 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      barcode scan
+      <ion-icon name="scan-outline"></ion-icon>
+      <ion-text>
+        Daniel villamizar
+      </ion-text>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-buttom  fill="outline"(click)="scan()" >Escanear</ion-buttom>
+
+  <ion-button color="danger" expand="block" (click)="scan()"><ion-icon name="scan-circle-outline"></ion-icon>Escanear</ion-button>
   {{code}}
 </ion-content>

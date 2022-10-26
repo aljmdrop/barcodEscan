@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 })
 export class HomePage implements OnInit {
   code: any
-  constructor(private barcodeScanner: BarcodeScanner) {}
+  constructor(private barcodeScanner: BarcodeScanner, private router:Router ) {}
   ngOnInit(){
 
   }
@@ -21,7 +22,12 @@ export class HomePage implements OnInit {
       console.log('Error', err);
     });
   }
-  
-  
 
-}
+  navegar(codigo:any){
+    this.router.navigate(['resultado'],{
+      state:{
+      codeqr: codigo
+      }
+    });
+  }
+}               
